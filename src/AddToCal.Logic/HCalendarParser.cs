@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.Linq;
 
 namespace AddToCal.Logic
 {
@@ -16,10 +17,11 @@ namespace AddToCal.Logic
 
             return new CalendarEvent
             {
-                Url = doc.DocumentNode.SelectSingleNode("[@class='url']").Attributes["href"].Value,
-                Summary = doc.DocumentNode.SelectSingleNode("[@class='summary']").InnerText,
-                Location = doc.DocumentNode.SelectSingleNode("[@class='location']").InnerText,
-
+                Url = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'url')]").Attributes["href"].Value,
+                Summary = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'summary')]").InnerText,
+                Location = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'location')]").InnerText,
+                Start = DateTime.Parse(doc.DocumentNode.SelectSingleNode("//*[contains(@class,'dtstart')]").Attributes["datetime"].Value),
+                End = DateTime.Parse(doc.DocumentNode.SelectSingleNode("//*[contains(@class,'dtend')]").Attributes["datetime"].Value),
             };
         }
     }
