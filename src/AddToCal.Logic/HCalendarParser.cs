@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AddToCal.Logic
@@ -10,19 +11,25 @@ namespace AddToCal.Logic
         {
         }
 
-        public CalendarEvent Parse(string input)
+        public IList<CalendarEvent> Parse(string input)
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(input);
+            var result = new List<CalendarEvent>();
 
-            return new CalendarEvent
+            foreach (var e in doc.DocumentNode.SelectNodes("//*[contains(@class,'vevent')]"))
             {
-                Url = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'url')]").Attributes["href"].Value,
-                Summary = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'summary')]").InnerText,
-                Location = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'location')]").InnerText,
-                Start = DateTime.Parse(doc.DocumentNode.SelectSingleNode("//*[contains(@class,'dtstart')]").Attributes["datetime"].Value),
-                End = DateTime.Parse(doc.DocumentNode.SelectSingleNode("//*[contains(@class,'dtend')]").Attributes["datetime"].Value),
-            };
+                result.Add(new CalendarEvent
+                {
+                    Url = e.SelectSingleNode("//*[contains(@class,'url')]").Attributes["href"].Value,
+                    Summary = e.SelectSingleNode("//*[contains(@class,'summary')]").InnerText,
+                    Location = e.SelectSingleNode("//*[contains(@class,'location')]").InnerText,
+                    Start = DateTime.Parse(e.SelectSingleNode("//*[contains(@class,'dtstart')]").Attributes["datetime"].Value),
+                    End = DateTime.Parse(e.SelectSingleNode("//*[contains(@class,'dtend')]").Attributes["datetime"].Value),
+                });
+            }
+
+            return result;
         }
     }
 }
