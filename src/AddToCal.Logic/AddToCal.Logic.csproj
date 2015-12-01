@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="CalendarEvent.cs" />
     <Compile Include="HCalendarParser.cs" />
+    <Compile Include="HEventParser.cs" />
+    <Compile Include="HtmlNodeHelpers.cs" />
     <Compile Include="ICalendarParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
