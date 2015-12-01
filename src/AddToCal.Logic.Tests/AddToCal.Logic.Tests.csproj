@@ -55,6 +55,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="HCalendarTests.cs" />
+    <Compile Include="HEventTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

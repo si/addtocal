@@ -1,7 +1,9 @@
-﻿namespace AddToCal.Logic
+﻿using System.Collections.Generic;
+
+namespace AddToCal.Logic
 {
     public interface ICalendarParser
     {
-        CalendarEvent Parse(string input);
+        IList<CalendarEvent> Parse(string input);
     }
 }
