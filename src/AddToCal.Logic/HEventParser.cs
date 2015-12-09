@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace AddToCal.Logic.Tests
+namespace AddToCal.Logic
 {
     // implements microformat2 h-event: http://microformats.org/wiki/h-event
     public class HEventParser : ICalendarParser
@@ -30,8 +30,8 @@ namespace AddToCal.Logic.Tests
                     Description = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'p-description')]")),
                     Summary = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'p-summary')]")),
                     Location = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'p-location')]")),
-                    Start = DateTime.Parse(HtmlNodeHelpers.GetAttributeValue( e.SelectSingleNode("//*[contains(@class,'dt-start')]"), "datetime")),
-                    End = DateTime.Parse(HtmlNodeHelpers.GetAttributeValue(e.SelectSingleNode("//*[contains(@class,'dt-end')]"), "datetime")),
+                    //Start = DateTime.Parse(HtmlNodeHelpers.GetAttributeValue( e.SelectSingleNode("//*[contains(@class,'dt-start')]"), "datetime")),
+                    //End = DateTime.Parse(HtmlNodeHelpers.GetAttributeValue(e.SelectSingleNode("//*[contains(@class,'dt-end')]"), "datetime")),
                 });
             }
 

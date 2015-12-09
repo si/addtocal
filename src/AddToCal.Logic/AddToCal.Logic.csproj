@@ -50,6 +50,7 @@
     <Compile Include="HtmlNodeHelpers.cs" />
     <Compile Include="ICalendarParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderAsiCal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

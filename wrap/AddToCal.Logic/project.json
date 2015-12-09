@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net452": {
+      "wrappedProject": "../../src/AddToCal.Logic/AddToCal.Logic.csproj",
+      "bin": {
+        "assembly": "../../src/AddToCal.Logic/obj/{configuration}/AddToCal.Logic.dll",
+        "pdb": "../../src/AddToCal.Logic/obj/{configuration}/AddToCal.Logic.pdb"
+      },
+      "dependencies": {
+        "HtmlAgilityPack": "1.4.9"
+      }
+    }
+  }
+}
