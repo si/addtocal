@@ -16,7 +16,7 @@ namespace AddToCal.Logic
             var sb = new StringBuilder();
             sb.AppendLine("BEGIN:VEVENT");
             sb.AppendLine("SUMMARY:" + _calendarEvent.Summary);
-            //sb.AppendLine("UID:" + _calendarEvent + "@addtoc.al");
+            //sb.AppendLine("UID:" + _calendarEvent + "@addtoc.al"); // not sure what this is for
             sb.AppendLine("DESCRIPTION;ENCODED=QUOTED-PRINTABLE:" + _calendarEvent.Description);
             sb.AppendLine("LOCATION:" + _calendarEvent.Location);
             sb.AppendLine("DTSTART:" + _calendarEvent.Start.ToString("yyyyMMddTHHmmssZ"));
