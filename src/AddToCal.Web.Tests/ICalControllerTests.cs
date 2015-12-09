@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AddToCal.Web.Controllers;
-using System.Linq;
+using AddToCal.Logic;
+using System.Web.Mvc;
 
 namespace AddToCal.Web.Tests
 {
@@ -12,9 +13,18 @@ namespace AddToCal.Web.Tests
         public void Calling_GetTest_ShouldReturnWithCorrectContentType()
         {
             var sut = new ICalController();
-            var result = sut.Get().Result;
+            var result = (FileResult)sut.GetFromEvent(new CalendarEvent {
+                Category = "test category",
+                Description = "test description",
+                Location = "test location",
+                Name = "test name",
+                Summary = "test summary",
+                Url = "test url",
+                Start = DateTime.UtcNow,
+                End =DateTime.UtcNow.AddMinutes(10)
+            });
 
-            Assert.IsTrue(result.Content.Headers.GetValues("Content-Type").First() == "text/calendar"); 
+            Assert.AreEqual("text/calendar", result.ContentType); 
         }
     }
 }

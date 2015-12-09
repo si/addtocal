@@ -84,6 +84,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AddToCal.Logic\AddToCal.Logic.csproj">
+      <Project>{C42CF29D-9F35-4E51-83D8-F3B6314F921B}</Project>
+      <Name>AddToCal.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AddToCal.Web\AddToCal.Web.csproj">
       <Project>{0a0fc82d-36e1-4e6b-abeb-c4918d3d0b4b}</Project>
       <Name>AddToCal.Web</Name>
