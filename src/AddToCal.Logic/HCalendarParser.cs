@@ -1,28 +1,43 @@
 ﻿using HtmlAgilityPack;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace AddToCal.Logic
 {
-    public class HCalendarParser: ICalendarParser
+    // implements hcalendar: http://microformats.org/wiki/hcalendar
+    // iCalendar RFC: http://www.ietf.org/rfc/rfc2445.txt
+
+    public class HCalendarParser : ICalendarParser
     {
         public HCalendarParser()
         {
         }
 
-        public CalendarEvent Parse(string input)
+        public IList<CalendarEvent> Parse(string input)
         {
             var doc = new HtmlDocument();
             doc.LoadHtml(input);
+            var result = new List<CalendarEvent>();
 
-            return new CalendarEvent
+            var nodes = doc.DocumentNode.SelectNodes("//*[contains(@class,'vevent')]");
+            if (nodes == null) { return result; }
+
+            foreach (var e in nodes)
             {
-                Url = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'url')]").Attributes["href"].Value,
-                Summary = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'summary')]").InnerText,
-                Location = doc.DocumentNode.SelectSingleNode("//*[contains(@class,'location')]").InnerText,
-                Start = DateTime.Parse(doc.DocumentNode.SelectSingleNode("//*[contains(@class,'dtstart')]").Attributes["datetime"].Value),
-                End = DateTime.Parse(doc.DocumentNode.SelectSingleNode("//*[contains(@class,'dtend')]").Attributes["datetime"].Value),
-            };
+                result.Add(new CalendarEvent
+                {
+                    Url = HtmlNodeHelpers.GetAttributeValue(e.SelectSingleNode("//*[contains(@class,'url')]"), "href"),
+                    Summary = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'summary')]")),
+                    Category = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'category')]")),
+                    Description = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'description')]")),
+                    Location = HtmlNodeHelpers.GetInnerText(e.SelectSingleNode("//*[contains(@class,'location')]")),
+                    Start = DateTime.Parse(HtmlNodeHelpers.GetAttributeValue(e.SelectSingleNode("//*[contains(@class,'dtstart')]"),"datetime")),
+                    End = DateTime.Parse(HtmlNodeHelpers.GetAttributeValue(e.SelectSingleNode("//*[contains(@class,'dtend')]"),"datetime"))
+                });
+            }
+
+            return result;
         }
     }
 }
