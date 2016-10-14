@@ -14,3 +14,9 @@
    * Get ICS
    * Get JSON
  * Contextual Widget
+
+## Homepage
+
+### Elevator Pitch
+
+Calendar events from structured content
