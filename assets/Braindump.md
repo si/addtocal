@@ -28,3 +28,16 @@
 3. Any detected events are highlighted as a contextual button 
 4. Users can click events to download a calendar file for their preferred personal organiser
 
+### Get Started
+
+Download the latest build from the [ADDTOCAL Github repository]() or install via NPM / Yarn.
+
+#### NPM
+
+    npm install addtocal
+
+#### Yarn
+
+    yarn addtocal
+
+    
