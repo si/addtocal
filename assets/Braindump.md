@@ -21,3 +21,10 @@
 
 > Calendar events from structured content
  
+### How It Works
+
+1. Events in your web content are marked up with [Microformats](http://microformats.org) or [Structured Data](http://schema.org).
+2. You include the [ADDTOC.AL Parser JavaScript](https://addtoc.al/scripts/highlight.js) (`https://addtoc.al/scripts/highlight.js`) on your webpage
+3. Any detected events are highlighted as a contextual button 
+4. Users can click events to download a calendar file for their preferred personal organiser
+
