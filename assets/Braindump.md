@@ -19,4 +19,5 @@
 
 ### Elevator Pitch
 
-Calendar events from structured content
+> Calendar events from structured content
+ 
