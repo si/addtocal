@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=0.12.2"
   },
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "^0.5.1",
