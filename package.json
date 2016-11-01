@@ -1,0 +1,13 @@
+{
+  "name": "add-to-cal",
+  "version": "1.0.0",
+  "description": "Identifying and converting web events into usable forms",
+  "engines": {
+    "node": ">=0.12.2"
+  },
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.1"
+  }
+}
