@@ -2,24 +2,21 @@
   "name": "add-to-cal",
   "version": "1.0.0",
   "description": "Identifying and converting web events into usable forms",
-  "engines": {
-    "node": ">=0.12.2"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.14.0"
-  },
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/si/addtocal.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Si",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/si/addtocal/issues"
   },
-  "homepage": "https://github.com/si/addtocal"
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
