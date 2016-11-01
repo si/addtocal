@@ -40,4 +40,5 @@ Download the latest build from the [ADDTOCAL Github repository]() or install via
 
     yarn addtocal
 
-    
+## Contextual Widget
+
