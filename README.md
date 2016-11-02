@@ -30,7 +30,7 @@
 
 ### Get Started
 
-Download the latest build from the [ADDTOCAL Github repository]() or install via NPM / Yarn.
+Download the latest build from the [ADDTOCAL Github repository](https://github.com/si/addtocal) or install via NPM / Yarn.
 
 #### NPM
 
