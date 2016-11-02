@@ -27,6 +27,20 @@ ADD TO CAL parses structured content for recognisable event patterns into calend
 3. Any detected events are highlighted with a contextual or dedicated component.
 4. Users can choose to download events as calendar files for their preferred personal organiser.
 
+## Samples
+
+### Microformats Event
+
+    <div class="vevent">
+      <h3 class="summary">ADDTOCAL First Meetup</h3>
+      <p>Join us on 
+        <time class="dtstart dtstamp" datetime="20170603T2000Z">3 Jun from 8pm</time>
+        at <a href="http://www.asos.com/" class="location">ASOS Event Space</a> 
+        to <span class="description">talk about our brand new ADD TO CAL SDKs 
+        and discuss how to move the project forward</span>  
+      </p>
+    </div>
+
 ## Get Started
 
 Download the latest build from the [Add To Cal Github repository](https://github.com/si/addtocal) or install via NPM / Yarn.
