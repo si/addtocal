@@ -34,7 +34,7 @@ ADD TO CAL parses structured content for recognisable event patterns into calend
     <div class="vevent">
       <h3 class="summary">ADDTOCAL First Meetup</h3>
       <p>Join us on 
-        <time class="dtstart dtstamp" datetime="20170603T2000Z">3 Jun from 8pm</time>
+        <time class="dtstart dtstamp" datetime="2017-06-03T20:00:00Z">3 Jun from 8pm</time>
         at <a href="http://www.asos.com/" class="location">ASOS Event Space</a> 
         to <span class="description">talk about our brand new ADD TO CAL SDKs 
         and discuss how to move the project forward</span>  
