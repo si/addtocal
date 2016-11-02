@@ -41,6 +41,18 @@ ADD TO CAL parses structured content for recognisable event patterns into calend
       </p>
     </div>
 
+### Structured Data Event
+
+    <article typeof="SportsEvent" vocab="http://schema.org/">
+      <h1>
+        <span property="performers">Liverpool</span>
+        <abbr title="versus">v</abbr>
+        <span property="performers">Watford Town</span>
+      </h1>
+      <time property="startDate">Sat 5th Nov 2016</time> 
+      <span property="superEvent">Premier League</span> 
+    </article>
+
 ## Get Started
 
 Download the latest build from the [Add To Cal Github repository](https://github.com/si/addtocal) or install via NPM / Yarn.
